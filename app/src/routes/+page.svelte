@@ -46,12 +46,18 @@
           </div>
         </div>
       {/if}
+
+      <div class="border overflow-scroll grid gap-3">
+        {#each wordBoolPercentageObject.quizWithWordTrue as thisTrueQuizObj, i} 
+          <div>{i+1} - {thisTrueQuizObj.q}</div>
+        {/each}
+      </div>
     </div>
 
     <div
       class="border bg-white/50 p-4 rounded-md {!wordBoolPercentageObject.whoWins
         ? 'border-8 rounded-2xl shadow bg-red-400/10 border-red-500'
-        : ''} grid grid-rows-[auto_2fr_1fr]"
+        : ''} grid gap-4"
     >
       <h1 class="text-red-400 font-bold text-3xl uppercase">falso</h1>
 
@@ -74,9 +80,9 @@
         </div>
       {/if}
 
-      <div class="border">
-        {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj} 
-          <div>{thisFalseQuizObj.q}</div>
+      <div class="border overflow-scroll grid gap-4 shadow-md rounded-lg p-3">
+        {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj, i} 
+          <div>{i+1} - {thisFalseQuizObj.q}</div>
         {/each}
       </div>
     </div>
