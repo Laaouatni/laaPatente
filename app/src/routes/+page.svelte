@@ -21,50 +21,64 @@
   </nav>
 
   <main class="grid grid-cols-2 gap-4">
-    <div class="border bg-white/50 p-4 rounded-md {wordBoolPercentageObject.whoWins ? "border-8 rounded-2xl shadow bg-green-400/10 border-green-500" : ""}">
+    <div
+      class="border bg-white/50 p-4 rounded-md {wordBoolPercentageObject.whoWins
+        ? 'border-8 rounded-2xl shadow bg-green-400/10 border-green-500'
+        : ''}"
+    >
       <h1 class="text-green-400 font-bold text-3xl uppercase">vero</h1>
 
       {#if wordBoolPercentageObject}
         <div
-          class=" grid gap-2 content-center justify-items-center h-full scale-150"
+          class=" grid gap-2"
         >
           <div>
-            <span class="font-bold text-[6vw]"
+            <span class="font-bold text-[8vw]"
               >{wordBoolPercentageObject.howManyTrue}</span
             >
-            <span class="text-[2.5vw]">domande vere</span>
+            <span class="text-[4vw]">domande vere</span>
           </div>
           <div>
-            <span class="font-bold text-[6vw]">
+            <span class="font-bold text-[10vw]">
               {wordBoolPercentageObject.percentageTrue.toFixed(2)}
             </span>
-            <span class="text-[3vw]"> % </span>
+            <span class="text-[5vw]"> % </span>
           </div>
         </div>
       {/if}
     </div>
 
-    <div class="border bg-white/50 p-4 rounded-md {!wordBoolPercentageObject.whoWins ? "border-8 rounded-2xl shadow bg-red-400/10 border-red-500" : ""}">
+    <div
+      class="border bg-white/50 p-4 rounded-md {!wordBoolPercentageObject.whoWins
+        ? 'border-8 rounded-2xl shadow bg-red-400/10 border-red-500'
+        : ''} grid grid-rows-[auto_2fr_1fr]"
+    >
       <h1 class="text-red-400 font-bold text-3xl uppercase">falso</h1>
 
       {#if wordBoolPercentageObject}
         <div
-          class=" grid gap-2 content-center justify-items-center h-full scale-150"
+          class="grid gap-2"
         >
           <div>
-            <span class="font-bold text-[6vw]"
+            <span class="font-bold text-[8vw]"
               >{wordBoolPercentageObject.howManyFalse}</span
             >
-            <span class="text-[2.5vw]">domande false</span>
+            <span class="text-[4vw]">domande false</span>
           </div>
           <div>
-            <span class="font-bold text-[6vw]">
+            <span class="font-bold text-[10vw]">
               {wordBoolPercentageObject.percentageFalse.toFixed(2)}
             </span>
-            <span class="text-[3vw]"> % </span>
+            <span class="text-[5vw]"> % </span>
           </div>
         </div>
       {/if}
+
+      <div class="border">
+        {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj} 
+          <div>{thisFalseQuizObj.q}</div>
+        {/each}
+      </div>
     </div>
   </main>
 </div>
