@@ -1,4 +1,4 @@
-{
+export default {
   "definizioni-generali-doveri-strada": {
     "carreggiata-doppio-senso": [
       {

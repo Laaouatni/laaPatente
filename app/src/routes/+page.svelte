@@ -1,7 +1,17 @@
-<script>
+<script lang="ts">
   import QuizCard from "$lib/QuizCard.svelte";
+  import quizData from "$lib/quizData";
+  import { recursiveObjectToArray } from "$lib/recursiveObjectToArray";
 
+  const allQuiz = recursiveObjectToArray(quizData);
+
+  function getWordBoolPercentage(word: string) {
+    return "🤨 ciao" + " " + word;
+  }
+
+  console.log(getWordBoolPercentage("obbligatoriamente"));
 </script>
+
 <div class="p-4 grid gap-4 h-full grid-rows-[auto_1fr]">
   <nav class="grid">
     <input type="text" class="shadow rounded-md text-2xl p-3 border-4 border-transparent focus:shadow-2xl focus:border-gray-200 focus:rounded-xl !outline-none transition" placeholder="scrivi...">
