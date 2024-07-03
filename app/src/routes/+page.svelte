@@ -48,7 +48,7 @@
       {#if wordBoolPercentageObject.quizWithWordTrue.length === 0}
         <div class="text-center text-gray-400">Nessuna domanda</div>
       {:else}
-        <div class="overflow-scroll grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
+        <div class="overflow-auto grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
           {#each wordBoolPercentageObject.quizWithWordTrue as thisTrueQuizObj, i}
             <div>{i + 1} - {thisTrueQuizObj.q}</div>
           {/each}
@@ -83,7 +83,7 @@
       {#if wordBoolPercentageObject.quizWithWordFalse.length === 0}
         <div class="text-center text-gray-400">Nessuna domanda</div>
       {:else}
-        <div class=" overflow-scroll grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
+        <div class=" overflow-auto grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
           {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj, i}
             <div>{i + 1} - {thisFalseQuizObj.q}</div>
           {/each}
