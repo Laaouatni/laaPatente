@@ -13,6 +13,7 @@
 <div class="p-4 flex gap-4 flex-col h-full">
   <nav class="grid">
     <input
+      on:input={() => {scrollTo(0, 0)}}
       bind:value={word}
       type="text"
       class="shadow rounded-md text-2xl p-3 border-4 border-transparent focus:shadow-2xl focus:border-gray-200 focus:rounded-xl !outline-none transition"
@@ -20,7 +21,7 @@
     />
   </nav>
 
-  <main class="flex-1 flex gap-4">
+  <main class="flex-1 flex gap-4 overflow-scroll">
     <div
       class="flex-1 border bg-white/50 p-4 rounded-md {wordBoolPercentageObject.whoWins
         ? 'border-8 rounded-2xl shadow bg-green-400/10 border-green-500'
@@ -34,13 +35,13 @@
             <span class="font-bold text-[8vw]"
               >{wordBoolPercentageObject.howManyTrue}</span
             >
-            <span class="text-[4vw]">domande vere</span>
+            <span class="text-[3vw]">domande vere</span>
           </div>
           <div>
             <span class="font-bold text-[10vw]">
               {wordBoolPercentageObject.percentageTrue.toFixed(2)}
             </span>
-            <span class="text-[5vw]"> % </span>
+            <span class="text-[4vw]"> % </span>
           </div>
         </div>
       {/if}
@@ -69,13 +70,13 @@
             <span class="font-bold text-[8vw]"
               >{wordBoolPercentageObject.howManyFalse}</span
             >
-            <span class="text-[4vw]">domande false</span>
+            <span class="text-[3vw]">domande false</span>
           </div>
           <div>
             <span class="font-bold text-[10vw]">
               {wordBoolPercentageObject.percentageFalse.toFixed(2)}
             </span>
-            <span class="text-[5vw]"> % </span>
+            <span class="text-[4vw]"> % </span>
           </div>
         </div>
       {/if}
@@ -83,7 +84,7 @@
       {#if wordBoolPercentageObject.quizWithWordFalse.length === 0}
         <div class="text-center text-gray-400">Nessuna domanda</div>
       {:else}
-        <div class=" overflow-auto grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
+        <div class="overflow-auto grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
           {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj, i}
             <div>{i + 1} - {thisFalseQuizObj.q}</div>
           {/each}
