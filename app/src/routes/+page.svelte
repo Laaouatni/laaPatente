@@ -10,7 +10,7 @@
   $: wordBoolPercentageObject = getWordBoolPercentage(allQuiz, word);
 </script>
 
-<div class="p-4 flex gap-4 flex-col ">
+<div class="p-4 flex gap-4 flex-col h-full">
   <nav class="grid">
     <input
       bind:value={word}
@@ -20,7 +20,7 @@
     />
   </nav>
 
-  <main class="flex gap-4">
+  <main class="flex-1 flex gap-4">
     <div
       class="flex-1 border bg-white/50 p-4 rounded-md {wordBoolPercentageObject.whoWins
         ? 'border-8 rounded-2xl shadow bg-green-400/10 border-green-500'
