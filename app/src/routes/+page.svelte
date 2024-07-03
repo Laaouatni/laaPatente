@@ -32,13 +32,13 @@
       {#if wordBoolPercentageObject}
         <div class="flex flex-col">
           <div>
-            <span class="font-bold text-[8vw]"
+            <span class="font-bold text-[6vw]"
               >{wordBoolPercentageObject.howManyTrue}</span
             >
             <span class="text-[3vw]">domande vere</span>
           </div>
           <div>
-            <span class="font-bold text-[10vw]">
+            <span class="font-bold text-[8vw]">
               {wordBoolPercentageObject.percentageTrue.toFixed(2)}
             </span>
             <span class="text-[4vw]"> % </span>
@@ -67,13 +67,13 @@
       {#if wordBoolPercentageObject}
         <div class="flex flex-col">
           <div>
-            <span class="font-bold text-[8vw]"
+            <span class="font-bold text-[6vw]"
               >{wordBoolPercentageObject.howManyFalse}</span
             >
             <span class="text-[3vw]">domande false</span>
           </div>
           <div>
-            <span class="font-bold text-[10vw]">
+            <span class="font-bold text-[8vw]">
               {wordBoolPercentageObject.percentageFalse.toFixed(2)}
             </span>
             <span class="text-[4vw]"> % </span>
