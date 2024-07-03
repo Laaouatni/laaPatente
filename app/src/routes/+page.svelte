@@ -29,9 +29,7 @@
       <h1 class="text-green-400 font-bold text-3xl uppercase">vero</h1>
 
       {#if wordBoolPercentageObject}
-        <div
-          class=" grid gap-2"
-        >
+        <div class="flex flex-col">
           <div>
             <span class="font-bold text-[8vw]"
               >{wordBoolPercentageObject.howManyTrue}</span
@@ -47,24 +45,26 @@
         </div>
       {/if}
 
-      <div class="border overflow-scroll grid gap-3">
-        {#each wordBoolPercentageObject.quizWithWordTrue as thisTrueQuizObj, i} 
-          <div>{i+1} - {thisTrueQuizObj.q}</div>
-        {/each}
-      </div>
+      {#if wordBoolPercentageObject.quizWithWordTrue.length === 0}
+        <div class="text-center text-gray-400">Nessuna domanda</div>
+      {:else}
+        <div class="overflow-scroll grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
+          {#each wordBoolPercentageObject.quizWithWordTrue as thisTrueQuizObj, i}
+            <div>{i + 1} - {thisTrueQuizObj.q}</div>
+          {/each}
+        </div>
+      {/if}
     </div>
 
     <div
       class="border bg-white/50 p-4 rounded-md {!wordBoolPercentageObject.whoWins
         ? 'border-8 rounded-2xl shadow bg-red-400/10 border-red-500'
-        : ''} grid gap-4"
+        : ''}"
     >
       <h1 class="text-red-400 font-bold text-3xl uppercase">falso</h1>
 
       {#if wordBoolPercentageObject}
-        <div
-          class="grid gap-2"
-        >
+        <div class="flex flex-col">
           <div>
             <span class="font-bold text-[8vw]"
               >{wordBoolPercentageObject.howManyFalse}</span
@@ -80,11 +80,15 @@
         </div>
       {/if}
 
-      <div class="border overflow-scroll grid gap-4 shadow-md rounded-lg p-3">
-        {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj, i} 
-          <div>{i+1} - {thisFalseQuizObj.q}</div>
-        {/each}
-      </div>
+      {#if wordBoolPercentageObject.quizWithWordFalse.length === 0}
+        <div class="text-center text-gray-400">Nessuna domanda</div>
+      {:else}
+        <div class=" overflow-scroll grid gap-6 shadow-md rounded-lg p-3 border-4 border-white bg-white/50">
+          {#each wordBoolPercentageObject.quizWithWordFalse as thisFalseQuizObj, i}
+            <div>{i + 1} - {thisFalseQuizObj.q}</div>
+          {/each}
+        </div>
+      {/if}
     </div>
   </main>
 </div>
