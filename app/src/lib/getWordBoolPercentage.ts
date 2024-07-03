@@ -9,8 +9,8 @@ export function getWordBoolPercentage(
   whoWins: boolean;
   quizWithWordTrue: any[];
   quizWithWordFalse: any[];
-} {
-  const quizWithWord = quiz.filter((thisQuiz) => thisQuiz.q.includes(word));
+  } {
+  const quizWithWord = quiz.filter((thisQuiz) => thisQuiz.q.toLowerCase().includes(word.toLocaleLowerCase()));
   const quizWithWordTrue = quizWithWord.filter(
     (thisQuiz) => thisQuiz.a === true,
   );
